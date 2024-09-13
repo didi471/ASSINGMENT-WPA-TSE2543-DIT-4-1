@@ -1,0 +1,21 @@
+
+h1
+{
+text-align: center;
+font-size:350%; 
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h3
+{
+text-align: center;
+font-size:150%;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color: goldenrod;
+}
+p
+{
+text-align: center;
+font-size:150%;
+color: rgba(226, 17, 191, 0.884);
+}
+

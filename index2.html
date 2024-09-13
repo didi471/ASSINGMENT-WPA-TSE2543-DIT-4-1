@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel = "stylesheet" type= "text/css" href= "style.css">
+<Title>BMI Calculation</Title>
+</head>
+<style>
+    body
+    {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/027/231/615/original/illustration-graphicof-aesthetic-background-template-with-serene-pastel-colors-and-minimalist-nature-design-vector.jpg');
+    }
+</style>
+<h1> Calculate Your BMI Now!!</h1>
+<p> This site is about BMI calculation to make it easier for users to measure their body weight and be able to know the BMI results immediately.<br>
+This can also help users know where their weight is.</p>
+<br>
+<br>
+    <div class="container">
+        <h2>BODY MASS INDEX</h2>
+        <h3>BMI CALCULATOR</h3>
+        <form id="bmiForm">
+            <label for="height">Height (cm):</label>
+            <input type="text" id="height" name="height"><br>
+            <label for="weight">Weight (kg):</label>
+            <input type="text" id="weight" name="weight"><br>
+            <input type="button" value="Calculate" onclick="calculateBMI()">
+            <input type="button" value="Reset" onclick="resetForm()">
+        </form>
+        <p id="result"></p>
+        <div id="bmiTable"></div>
+    </div>
+</cointainer>
+    <br>
+    <br>
+    <div style="display: flex; justify-content: space-between;">
+        <div style="text-align: center;">
+            <img src="https://www.transparentpng.com/download/home/oHzkiZ-home-button-clipart-hd.png" style="width:150px;height:155px;">
+            <br>
+            <a style="font-size: 30px;" href="index.html">index</a>
+        </div>
+    
+        <div style="text-align: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/5296/5296222.png" style="width:150px;height:155px;">
+            <br>
+            <a style="font-size: 30px;" href="health_info.html">health_info</a>
+        </div>
+    
+
+    
+    <script type="text/JavaScript">
+        function calculateBMI() {
+            var height = document.getElementById("height").value;
+            var weight = document.getElementById("weight").value;
+
+            if (isNaN(height) || height === "" || isNaN(weight) || weight === "") {
+                alert("Invalid input. Please enter numbers for both height and weight.");
+                return;
+            }
+
+            height = height / 100; // Convert height to meters
+            var bmi = weight / (height * height);
+            var status;
+
+            if (bmi < 18.5) {
+                status = "Underweight";
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                status = "Normal weight";
+            } else if (bmi >= 25 && bmi < 29.9) {
+                status = "Overweight";
+            } else {
+                status = "Obesity";
+            }
+
+            alert("Thank you! Here are your BMI results:\n\n" +
+                  "Height: " + (height * 100).toFixed(2) + " cm\n" +
+                  "Weight: " + weight + " kg\n" +
+                  "Your BMI: " + bmi.toFixed(2) + "\n" +
+                  "Status: " + status);
+        }
+        
+
+        function resetForm() {
+            document.getElementById("bmiForm").reset();
+            document.getElementById("result").innerHTML = "";
+            document.getElementById("bmiTable").innerHTML = "";
+        }
+
+    </script>
+    
+    
+</body>
+</html>
